@@ -63,7 +63,7 @@ class Api::V1::StudentsController < ApplicationController
         redirect_to root_path
     end
 
-    # private method's
+    # private methods
     private        
         # set_student by given :id
         def set_student
