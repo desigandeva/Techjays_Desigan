@@ -1,0 +1,27 @@
+<h1 style="text-align: center;color: aqua;padding-top: 10px;align-items: center;">Score</h1>
+<div class="body-container" style="width: 100%;display: flex;justify-content: center;" >
+<div class="form-container" style="width: 250px;padding: 20px;">
+<%= form_for @score, url: {action: 'addScore' } do |score| %>
+<label>Student : </label>
+<select name="student_id" id="student_id">
+    <%= @students.each do |student| %>
+    <option value="<%= student.id %>"><%= student.name %></option>
+    <%end%>
+</select>
+<br><br>
+<label >Subject : </label>
+<select name="subject_id" id="subject_id">
+    <%= @subjects.each do |subject| %>
+    <option value="<%= subject.id %>"><%= subject.name %></option>
+    <%end%>
+</select>
+<br><br>
+<%= score.label :score %>:
+<%= score.text_field :score %>
+<br><br>
+<%= score.submit :Submit, style: 'margin-left: 80px;font-size: 16px;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 3px 5px;font-family: "Times New Roman", Times, serif;' %>
+<% end %>
+<br>
+<%= link_to "Back", api_v1_scores_index_path , style: 'margin-left: 90px;font-size: 15px;color: black;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 5px;font-family: "Times New Roman", Times, serif;' %>
+</div>
+</div>

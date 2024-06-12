@@ -1,0 +1,15 @@
+<h1 style="text-align: center;color: aqua;padding-top: 10px;align-items: center;">Subject Data</h1>
+<div class="container" style="padding: 10px;">
+    <% if @subjects.empty? %>
+        <p style="color: aqua;text-align: center;">There is no subject data.</p>
+    <% else %>
+        <% @subjects.each do |subject| %>
+            <%= render partial: 'layouts/data',locals: {:data => subject} %>
+        <% end %>
+    <br>
+    <%end%>
+    <p style="text-align: center;">
+        <%= link_to "Add", new_api_v1_subject_path, style: 'font-size: 15px;color: black;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 5px;font-family: "Times New Roman", Times, serif;' %>
+        <%= link_to "Home", root_path, style: 'font-size: 15px;color: black;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 5px;font-family: "Times New Roman", Times, serif;' %>
+    </p>
+</div>

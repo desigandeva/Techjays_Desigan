@@ -1,0 +1,25 @@
+<h1 style="text-align: center;">Student Score</h1>
+<div class="container" style="text-align: center;align-items: center;justify-content: center;display: grid; ">
+<table style="text-align: center;width: 300px;">
+    <tr style="justify-content: space-around;">
+        <th style="padding-bottom: 10px;">Student ID </th>
+        <th style="padding-bottom: 10px;">Student Name </th>
+        <th style="padding-bottom: 10px;">Rank</th>
+    </tr>
+    <% @students.each do |student| %>
+    <% @scores.each do |score| %>
+    <tr>
+        <% if score.student_id==student.id %>
+            <td><%= student.id %></td>
+            <td><%= student.name %></td>
+            <td><%= score.rank %></td>
+        <%end%>
+    </tr>
+    <%end%>
+    <%end%>
+</table>
+<br>
+<p>
+    <%= link_to "Back", api_v1_scores_index_path , style: 'margin-left: 50px;font-size: 15px;color: black;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 5px;font-family: "Times New Roman", Times, serif;' %>
+</p>
+</div>

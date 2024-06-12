@@ -1,0 +1,4 @@
+<h1 style="text-align: center;padding-top: 50px;">Update Student Data</h1>
+<%= render partial: 'layouts/form',locals: { data: @student,action: 'update'} %>
+<br><br>
+<%= link_to 'Back', api_v1_students_index_path, style: 'font-size: 18px;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 3px;font-family: "Times New Roman", Times, serif;' %>

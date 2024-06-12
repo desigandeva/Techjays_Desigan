@@ -1,0 +1,10 @@
+<h1 style="text-align: center;color: aqua;padding-top: 10px;">Student Data</h1>
+<%= render partial: 'layouts/data',locals: { data: @student} %>
+<br><br>
+<div class="box" style="justify-content: center;display: flex;">
+<div class="btn" style="display: flex;justify-content: space-around;width: 200px;">
+<%= link_to 'Edit',{ action: 'edit', id: @student.id }, style: 'font-size: 18px;color: black;background-color: yellow;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 3px;font-family: "Times New Roman", Times, serif;' %>
+<%= link_to 'Delete',{ action: 'destroy', id: @student.id }, style: 'font-size: 18px;color: black;background-color: red;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 3px;font-family: "Times New Roman", Times, serif;' %>
+<%= link_to 'Back', api_v1_students_index_path , style: 'font-size: 18px;background-color: aqua;color: black;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 3px;font-family: "Times New Roman", Times, serif;' %>
+</div>
+</div>

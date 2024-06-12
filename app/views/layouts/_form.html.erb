@@ -1,0 +1,9 @@
+<div class="form-container" style="text-align: center;justify-content: space-between;padding: 10px;">
+    <%= form_for data, url: {action: action, id: data.id} do |data| %>
+    <%= data.label :name %>: <br><br>
+    <%= data.text_field :name %><br><br>
+    <div class="submit-btn">
+        <%= data.submit "Submit", style: 'font-size: 18px;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 3px;font-family: "Times New Roman", Times, serif;' %>
+    </div>
+    <% end %>
+</div>

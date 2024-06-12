@@ -1,0 +1,8 @@
+<h1 style="text-align: center;color: aqua;padding-top: 10px;">Subject Data</h1>
+<%= render partial: 'layouts/data',locals: { data: @subject} %>
+<br><br>
+<div class="btn" style="display: flex;justify-content: space-around;">
+<%= link_to 'Edit',{ action: 'edit', id: @subject.id }, style: 'font-size: 18px;color: black;background-color: yellow;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 3px;font-family: "Times New Roman", Times, serif;' %>
+<%= link_to 'Delete',@subject, method: :delete, style: 'font-size: 18px;color: black;background-color: red;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 3px;font-family: "Times New Roman", Times, serif;' %>
+<%= link_to 'Back', api_v1_subjects_path , style: 'font-size: 18px;background-color: aqua;color: black;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 3px;font-family: "Times New Roman", Times, serif;' %>
+</div>

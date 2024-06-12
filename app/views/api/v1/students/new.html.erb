@@ -1,0 +1,5 @@
+<h1 style="text-align: center;padding-top: 50px;">Add Student</h1>
+<%= render partial: 'layouts/form',locals: {data: @student, action: 'create'} %>
+<p style="text-align: center;">
+    <%= link_to "Back", api_v1_students_index_path , style: 'font-size: 15px;color: black;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 5px;font-family: "Times New Roman", Times, serif;' %>
+</p>

@@ -1,0 +1,126 @@
+<style>
+    body{
+        background-color: rgb(0, 0, 0);
+        color: aqua;
+    }
+    .navbar{
+        width: 100%;
+        position: fixed;
+        display: flex;
+        z-index: 100;
+        /* padding-bottom: 30px; */
+        /* border-bottom: 0.5px aqua solid; */
+        /* border-bottom-right-radius: 12px; */
+        /* border-bottom-left-radius: 10px; */
+    }
+    ul{
+        margin: 0px;
+        background-color: rgb(0,0,0);
+        /* margin-bottom: 30px; */
+        display: inline;
+        padding: 15px;
+        /* position: absolute; */
+    }
+    ul li{
+        padding-left: 10px;
+        padding-right: 10px;
+        display: inline;
+    }
+    ul li:hover ul{
+        display: block;
+    }
+    ul li ul{
+        /* background-color: beige; */
+        display: none;
+        position: absolute;
+    }
+    ul li .std{
+        padding-left: 75px;
+    }
+    ul li .scr{
+        padding-left: 250px;
+    }
+    ul li ul li{
+        display: block;
+    }
+    a{
+        color: aqua;
+        text-decoration: none;
+        font-weight: bolder;
+        font-size: larger;
+    }
+    .sub-link{
+        /* background-color: bisque; */
+        display: inline;
+        position: absolute;
+        padding-top: 32px;
+        margin-left: -60px;
+    }
+    .button{
+        background-color: transparent;
+        border: none;
+        padding-top: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 10pz;
+    }
+    .dropdown{
+        display: none;
+        padding-top: 35px;
+        margin-left: -85px;
+    }
+    .button:hover + .dropdown{
+        display: block;
+    }
+</style>
+<div class="navbar">
+    <!-- <div class="button">
+        <%= link_to 'Home', root_path %>
+    </div>
+    <div class="button">
+        <%= link_to 'Student', api_v1_students_index_path %>
+    </div>
+    <div class="dropdown">
+        <%= link_to "Publish Score", api_v1_students_publish_score_path %>
+    </div>
+    <div class="button">
+        <%= link_to 'Subject', api_v1_subjects_path %>
+    </div>
+    <div class="button">
+        <%= link_to 'Score', api_v1_scores_index_path %>
+    </div>
+    <div class="dropdown">
+        <%= link_to "Display Score", api_v1_scores_display_path %>
+    </div> -->
+    <ul>
+        <li style="display: inline;">
+            <%= link_to 'Home', root_path %>
+        </li>
+        <li style="display: inline;">
+            <a href="#">Student</a>
+            <ul class="std">
+                <li>
+                    <%= link_to "Student's", api_v1_students_index_path %><br><br>
+                </li>
+                <li>
+                    <%= link_to 'Publish Score', api_v1_students_publish_score_path %>
+                </li>
+            </ul>
+        </li>
+        <li style="display: inline;">
+            <%= link_to 'Subject', api_v1_subjects_path %>
+        </li>
+        <li style="display: inline;">
+            <a href="#">Score</a>
+            <ul class="scr">
+                <li>
+                    <%= link_to "Score's", api_v1_scores_index_path %><br><br>
+                </li>
+                <li>
+                    <%= link_to 'Display Score', api_v1_scores_display_path %>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<br><br>

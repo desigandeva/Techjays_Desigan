@@ -1,0 +1,15 @@
+<h1 style="text-align: center;color: aqua;padding-top: 10px;align-items: center;">Student Data</h1>
+<div class="container" style="padding: 10px;">
+    <% if @students.empty? %>
+        <p style="color: aqua;text-align: center;">There is no student data.</p>
+    <% else %>
+        <% @students.each do |student| %>
+            <%= render partial: 'layouts/data',locals: {:data => student} %>
+        <% end %>
+    <br>
+    <%end%>
+    <p style="text-align: center;">
+        <%= link_to "Add", api_v1_students_new_path, style: 'font-size: 15px;color: black;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 5px;font-family: "Times New Roman", Times, serif;' %>
+        <%= link_to "Home", root_path, style: 'font-size: 15px;color: black;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 5px;font-family: "Times New Roman", Times, serif;' %>
+    </p>
+</div>

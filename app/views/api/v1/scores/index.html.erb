@@ -1,0 +1,24 @@
+<h1 style="text-align: center;color: aqua;padding-top: 10px;align-items: center;">Score Details</h1>
+<div class="form-container" style="text-align: center;justify-content: space-between;padding: 10px;">
+    <% if @scores.empty? %>
+    <p>There is no data available.</p>
+    <%else%>
+    <% @students.each do |student| %>
+    <label>
+        <%= student.name %><p style="display: inline;color: aquamarine;"> => </p>
+    </label>
+        <% @subjects.each do |subject| %>
+            <% @scores.each do |score| %>
+                <% if subject.id==score.subject_id and student.id==score.student_id %>
+                    <%= subject.name %> :
+                    <%= score.score %>
+                <%end%>
+            <%end%>
+        <%end%>
+        <br><br>
+    <%end%>
+    <%end%>
+    <br><br>
+    <%= link_to 'Add', api_v1_scores_new_path, style: 'font-size: 15px;color: black;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 5px;font-family: "Times New Roman", Times, serif;' %>
+    <%= link_to 'Home', root_path, style: 'font-size: 15px;color: black;background-color: aqua;bolder: 1px solid black; border-radius: 8px;font-weight: bold; padding: 5px;font-family: "Times New Roman", Times, serif;' %>
+</div>
