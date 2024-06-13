@@ -19,7 +19,9 @@ class Api::V1::ScoresController < ApplicationController
     
     # POST /api/v1/score/create
     def addScore
-        @score = Score.new(score: params[:score][:score], student_id: params[:student_id], subject_id: params[:subject_id])
+        @student = Student.find(params[:student_id])
+        @subject = Subject.find(params[:subject_id])
+        @score = @student.scores.new(score: params[:score][:score], subject: @subject)
         if @score.save
             redirect_to api_v1_scores_index_path
         else
